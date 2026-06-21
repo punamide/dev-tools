@@ -1,0 +1,51 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const tools = [
+  { slug: '/json-formatter', name: 'JSON Formatter', icon: '{}', desc: 'Format, validate and minify JSON data', tag: 'Format' },
+  { slug: '/jwt-decoder', name: 'JWT Decoder', icon: '🔑', desc: 'Decode and inspect JWT token payloads', tag: 'Security' },
+  { slug: '/base64', name: 'Base64', icon: 'B64', desc: 'Encode and decode Base64 strings', tag: 'Encode' },
+  { slug: '/url-encoder', name: 'URL Encode/Decode', icon: '🔗', desc: 'Encode and decode URL components and query strings', tag: 'Encode' },
+  { slug: '/regex-tester', name: 'Regex Tester', icon: '.*', desc: 'Test regular expressions with live match highlighting', tag: 'Test' },
+  { slug: '/timestamp', name: 'Timestamp Converter', icon: '⏱', desc: 'Convert between Unix timestamps and human dates', tag: 'Convert' },
+  { slug: '/color-converter', name: 'Color Converter', icon: '⬤', desc: 'Convert between HEX, RGB, and HSL color formats', tag: 'Convert' },
+  { slug: '/markdown-preview', name: 'Markdown Preview', icon: 'MD', desc: 'Write Markdown and see the rendered output live', tag: 'Preview' },
+  { slug: '/http-status', name: 'HTTP Status Codes', icon: '404', desc: 'Searchable reference for all HTTP status codes', tag: 'Reference' },
+  { slug: '/diff-checker', name: 'Diff Checker', icon: '±', desc: 'Compare two text blocks and highlight differences', tag: 'Compare' },
+  { slug: '/uuid-generator', name: 'UUID Generator', icon: '🆔', desc: 'Generate UUID v4 (random), v5 (SHA-1), or bulk batches', tag: 'Generate' },
+  { slug: '/cron-builder', name: 'CRON Builder', icon: '⏰', desc: 'Build cron expressions visually and see next run times', tag: 'Generate' },
+  { slug: '/regex-builder', name: 'Regex Builder', icon: '⚙', desc: 'Build regex patterns visually with live match highlighting', tag: 'Build' },
+  { slug: '/package-analyzer', name: 'package.json Analyzer', icon: '📦', desc: 'Analyze dependencies, scripts, version ranges, and get insights', tag: 'Analyze' },
+  { slug: '/json-to-types', name: 'JSON → TS + Zod', icon: 'TS', desc: 'Generate TypeScript interfaces and Zod schemas from any JSON', tag: 'Generate' },
+  { slug: '/base-converter', name: 'Number Base Converter', icon: '01', desc: 'Convert between binary, octal, decimal, and hex in real time', tag: 'Convert' },
+];
+---
+
+<Layout title="Home" description="16 free developer tools that run entirely in your browser. JSON formatter, regex builder, JWT decoder, cron builder, and more. No signup, no tracking, no server.">
+  <div>
+    <div style="margin-bottom:32px;">
+      <h2 style="font-size:24px;font-weight:700;color:#f1f5f9;margin:0 0 8px;">Developer Tools</h2>
+      <p style="color:#64748b;font-size:14px;margin:0;line-height:1.6;">
+        16 essential tools for your daily workflow. Everything runs in your browser — no data ever leaves your machine.
+      </p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;">
+      {tools.map(tool => (
+        <a
+          href={tool.slug}
+          style="display:block;background:#0f172a;border:1px solid #1e293b;border-radius:12px;padding:20px;text-decoration:none;transition:all 0.2s;cursor:pointer;"
+          onmouseover="this.style.borderColor='rgba(99,102,241,0.4)';this.style.background='#131f32';"
+          onmouseout="this.style.borderColor='#1e293b';this.style.background='#0f172a';"
+        >
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;">
+            <span style="font-family:monospace;font-size:22px;">{tool.icon}</span>
+            <span style="font-size:11px;font-weight:500;color:#818cf8;background:rgba(99,102,241,0.1);padding:2px 8px;border-radius:999px;">{tool.tag}</span>
+          </div>
+          <div style="font-size:14px;font-weight:600;color:#e2e8f0;margin-bottom:6px;">{tool.name}</div>
+          <div style="font-size:13px;color:#475569;line-height:1.5;">{tool.desc}</div>
+        </a>
+      ))}
+    </div>
+  </div>
+</Layout>

@@ -1,0 +1,7 @@
+---
+import Layout from '../layouts/Layout.astro';
+import UuidGenerator from '../tools/UuidGenerator';
+---
+<Layout title="UUID Generator" description="Generate UUID v4 (random), UUID v5 (SHA-1), and bulk UUIDs in your browser.">
+  <UuidGenerator client:load />
+</Layout>

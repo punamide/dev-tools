@@ -1,0 +1,153 @@
+---
+import '../global.css';
+
+export interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'Developer tools that run entirely in your browser. No signup, no tracking, no server.' } = Astro.props;
+const pageTitle = title === 'Home' ? 'DevTools — tools.punamide.com' : `${title} — Free Online Developer Tool | DevTools`;
+const canonicalUrl = new URL(Astro.url.pathname, 'https://tools.punamide.com').href;
+
+const tools = [
+  { slug: '/json-formatter', name: 'JSON Formatter', icon: '{}', group: 'Format & Parse' },
+  { slug: '/package-analyzer', name: 'package.json Analyzer', icon: '📦', group: 'Format & Parse' },
+  { slug: '/json-to-types', name: 'JSON → TS + Zod', icon: 'TS', group: 'Format & Parse' },
+  { slug: '/jwt-decoder', name: 'JWT Decoder', icon: '🔑', group: 'Format & Parse' },
+  { slug: '/base64', name: 'Base64', icon: 'B64', group: 'Encode & Convert' },
+  { slug: '/url-encoder', name: 'URL Encode/Decode', icon: '🔗', group: 'Encode & Convert' },
+  { slug: '/color-converter', name: 'Color Converter', icon: '⬤', group: 'Encode & Convert' },
+  { slug: '/base-converter', name: 'Base Converter', icon: '01', group: 'Encode & Convert' },
+  { slug: '/regex-tester', name: 'Regex Tester', icon: '.*', group: 'Test & Validate' },
+  { slug: '/regex-builder', name: 'Regex Builder', icon: '⚙', group: 'Test & Validate' },
+  { slug: '/markdown-preview', name: 'Markdown Preview', icon: 'MD', group: 'Test & Validate' },
+  { slug: '/diff-checker', name: 'Diff Checker', icon: '±', group: 'Test & Validate' },
+  { slug: '/uuid-generator', name: 'UUID Generator', icon: '🆔', group: 'Generate' },
+  { slug: '/cron-builder', name: 'CRON Builder', icon: '⏰', group: 'Generate' },
+  { slug: '/timestamp', name: 'Timestamp', icon: '⏱', group: 'Reference' },
+  { slug: '/http-status', name: 'HTTP Status Codes', icon: '404', group: 'Reference' },
+];
+
+const groups = [...new Set(tools.map(t => t.group))];
+const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content={description} />
+  <title>{pageTitle}</title>
+  <link rel="canonical" href={canonicalUrl} />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content={pageTitle} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonicalUrl} />
+  <meta property="og:site_name" content="DevTools by PunamIDE" />
+  <meta property="og:image" content="https://tools.punamide.com/opengraph.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={pageTitle} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content="https://tools.punamide.com/opengraph.jpg" />
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body class="devtools-body">
+
+  <!-- Mobile header -->
+  <div class="mobile-header">
+    <a href="/" class="mobile-brand">
+      <span class="brand-icon">&gt;_</span>
+      <span class="brand-text">DevTools</span>
+    </a>
+    <button class="mobile-menu-btn" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <a href="/">
+        <span class="brand-icon">&gt;_</span>
+        <span class="brand-text">DevTools</span>
+      </a>
+      <div class="brand-sub">tools.punamide.com</div>
+    </div>
+
+    <nav class="sidebar-nav">
+      {groups.map(group => (
+        <div class="nav-group">
+          <div class="nav-group-label">{group}</div>
+          {tools.filter(t => t.group === group).map(tool => {
+            const isActive = pathname === tool.slug;
+            return (
+              <a href={tool.slug} class={`nav-link ${isActive ? 'active' : ''}`}>
+                <span class="nav-icon">{tool.icon}</span>
+                {tool.name}
+              </a>
+            );
+          })}
+        </div>
+      ))}
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="sidebar-privacy">All tools run in your browser. No data is sent to any server.</div>
+      <a href="https://punamide.com" target="_blank" rel="noreferrer" class="punamide-cta">
+        <span>⚡</span>
+        <span>Get <strong>PunamIDE</strong> — AI-powered desktop IDE for Windows</span>
+      </a>
+    </div>
+  </aside>
+
+  <!-- Overlay for mobile -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <!-- Main -->
+  <div class="main-wrap">
+    <header class="main-header">
+      <h1>{title}</h1>
+    </header>
+    <main class="main-content">
+      <slot />
+    </main>
+    <footer class="main-footer">
+      <span>Built by <a href="https://punamide.com" target="_blank" rel="noreferrer">PunamIDE</a></span>
+      <span class="footer-sep">·</span>
+      <span>All tools are free and run locally in your browser</span>
+    </footer>
+  </div>
+
+  <script is:inline>
+    const toggle = document.getElementById('menuToggle');
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('sidebarOverlay');
+    function openMenu() {
+      sidebar.classList.add('open');
+      overlay.classList.add('open');
+      toggle.setAttribute('aria-expanded', 'true');
+    }
+    function closeMenu() {
+      sidebar.classList.remove('open');
+      overlay.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }
+    toggle.addEventListener('click', () => {
+      sidebar.classList.contains('open') ? closeMenu() : openMenu();
+    });
+    overlay.addEventListener('click', closeMenu);
+  </script>
+</body>
+</html>

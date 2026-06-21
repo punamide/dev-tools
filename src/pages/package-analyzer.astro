@@ -1,0 +1,7 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PackageAnalyzer from '../tools/PackageAnalyzer';
+---
+<Layout title="package.json Analyzer" description="Paste any package.json and get a full breakdown of dependencies, scripts, version ranges, and insights.">
+  <PackageAnalyzer client:load />
+</Layout>

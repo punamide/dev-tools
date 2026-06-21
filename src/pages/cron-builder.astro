@@ -1,0 +1,7 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CronBuilder from '../tools/CronBuilder';
+---
+<Layout title="CRON Expression Builder" description="Visually build cron expressions, get human-readable descriptions, and see the next 5 scheduled run times.">
+  <CronBuilder client:load />
+</Layout>

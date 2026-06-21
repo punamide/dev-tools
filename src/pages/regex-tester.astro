@@ -2,6 +2,14 @@
 import Layout from '../layouts/Layout.astro';
 import RegexTester from '../tools/RegexTester';
 ---
-<Layout title="Regex Tester" description="Test regular expressions with live match highlighting in your browser.">
+<Layout
+  title="Regex Tester Online — Test Regular Expressions"
+  description="Test regular expressions with live match highlighting. See matches, groups, and captures in real time. Free online regex tester with JavaScript flavor support."
+  keywords="regex tester, regex tester online, test regular expression, regex matcher, regex debugger, regexp tester, regular expression tester"
+>
   <RegexTester client:load />
+  <section class="seo-content">
+    <h2>Free Online Regular Expression Tester</h2>
+    <p>Write and test regular expressions with instant visual match highlighting. Supports all JavaScript regex features including named groups, lookaheads, and Unicode properties. See every match and capture group in real time.</p>
+  </section>
 </Layout>

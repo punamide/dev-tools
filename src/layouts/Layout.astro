@@ -4,11 +4,34 @@ import '../global.css';
 export interface Props {
   title: string;
   description?: string;
+  keywords?: string;
 }
 
-const { title, description = 'Developer tools that run entirely in your browser. No signup, no tracking, no server.' } = Astro.props;
-const pageTitle = title === 'Home' ? 'DevTools — tools.punamide.com' : `${title} — Free Online Developer Tool | DevTools`;
+const { title, description = 'Developer tools that run entirely in your browser. No signup, no tracking, no server.', keywords = '' } = Astro.props;
+const pageTitle = title === 'Home'
+  ? 'Free Online Developer Tools — JSON Formatter, Regex Tester, UUID Generator & More | DevTools'
+  : `${title} — Free Online Tool | DevTools by PunamIDE`;
 const canonicalUrl = new URL(Astro.url.pathname, 'https://tools.punamide.com').href;
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": title === 'Home' ? 'DevTools by PunamIDE' : title,
+  "url": canonicalUrl,
+  "description": description,
+  "applicationCategory": "DeveloperApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "PunamIDE",
+    "url": "https://punamide.com"
+  }
+};
 
 const tools = [
   { slug: '/json-formatter', name: 'JSON Formatter', icon: '{}', group: 'Format & Parse' },
@@ -39,6 +62,9 @@ const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content={description} />
+  {keywords && <meta name="keywords" content={keywords} />}
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="PunamIDE" />
   <title>{pageTitle}</title>
   <link rel="canonical" href={canonicalUrl} />
 
@@ -49,12 +75,17 @@ const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
   <meta property="og:url" content={canonicalUrl} />
   <meta property="og:site_name" content="DevTools by PunamIDE" />
   <meta property="og:image" content="https://tools.punamide.com/opengraph.jpg" />
+  <meta property="og:locale" content="en_US" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content={pageTitle} />
   <meta name="twitter:description" content={description} />
   <meta name="twitter:image" content="https://tools.punamide.com/opengraph.jpg" />
+  <meta name="twitter:site" content="@PunamIDE" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
 
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -86,14 +117,14 @@ const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
       <div class="brand-sub">tools.punamide.com</div>
     </div>
 
-    <nav class="sidebar-nav">
+    <nav class="sidebar-nav" aria-label="Tool navigation">
       {groups.map(group => (
         <div class="nav-group">
           <div class="nav-group-label">{group}</div>
           {tools.filter(t => t.group === group).map(tool => {
             const isActive = pathname === tool.slug;
             return (
-              <a href={tool.slug} class={`nav-link ${isActive ? 'active' : ''}`}>
+              <a href={tool.slug} class={`nav-link ${isActive ? 'active' : ''}`} aria-current={isActive ? 'page' : undefined}>
                 <span class="nav-icon">{tool.icon}</span>
                 {tool.name}
               </a>
@@ -124,9 +155,13 @@ const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
       <slot />
     </main>
     <footer class="main-footer">
-      <span>Built by <a href="https://punamide.com" target="_blank" rel="noreferrer">PunamIDE</a></span>
-      <span class="footer-sep">·</span>
-      <span>All tools are free and run locally in your browser</span>
+      <nav aria-label="Footer navigation">
+        <span>Built by <a href="https://punamide.com" target="_blank" rel="noreferrer">PunamIDE</a></span>
+        <span class="footer-sep">·</span>
+        <a href="/">All Tools</a>
+        <span class="footer-sep">·</span>
+        <span>Free, open-source, runs locally in your browser</span>
+      </nav>
     </footer>
   </div>
 

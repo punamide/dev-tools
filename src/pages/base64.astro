@@ -2,6 +2,14 @@
 import Layout from '../layouts/Layout.astro';
 import Base64Tool from '../tools/Base64Tool';
 ---
-<Layout title="Base64 Encode / Decode" description="Encode text to Base64 or decode Base64 strings in your browser.">
+<Layout
+  title="Base64 Encode & Decode Online"
+  description="Encode text to Base64 or decode Base64 strings instantly in your browser. Free online Base64 converter with UTF-8 support. No signup needed."
+  keywords="base64 encode, base64 decode, base64 converter online, encode to base64, decode base64, base64 encoder decoder"
+>
   <Base64Tool client:load />
+  <section class="seo-content">
+    <h2>Free Online Base64 Encoder & Decoder</h2>
+    <p>Convert text to Base64 encoding or decode Base64 strings back to plain text. Supports UTF-8 characters and handles large inputs. Runs entirely in your browser with zero data transmission.</p>
+  </section>
 </Layout>

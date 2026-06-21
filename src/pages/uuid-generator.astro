@@ -2,6 +2,14 @@
 import Layout from '../layouts/Layout.astro';
 import UuidGenerator from '../tools/UuidGenerator';
 ---
-<Layout title="UUID Generator" description="Generate UUID v4 (random), UUID v5 (SHA-1), and bulk UUIDs in your browser.">
+<Layout
+  title="UUID Generator Online — v4, v5, Bulk"
+  description="Generate UUID v4 (random), UUID v5 (SHA-1 based), or bulk UUIDs instantly. Free online UUID/GUID generator with copy-to-clipboard and batch generation."
+  keywords="uuid generator, uuid generator online, generate uuid, guid generator, uuid v4, uuid v5, bulk uuid generator"
+>
   <UuidGenerator client:load />
+  <section class="seo-content">
+    <h2>Free Online UUID Generator</h2>
+    <p>Generate universally unique identifiers instantly. Supports UUID v4 (cryptographically random), UUID v5 (SHA-1 namespace-based), and bulk generation of up to 100 UUIDs at once. Copy individual UUIDs or the entire batch with one click.</p>
+  </section>
 </Layout>

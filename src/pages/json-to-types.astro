@@ -2,6 +2,21 @@
 import Layout from '../layouts/Layout.astro';
 import JsonToTypes from '../tools/JsonToTypes';
 ---
-<Layout title="JSON → TypeScript + Zod Generator" description="Paste any JSON and instantly generate TypeScript interfaces and Zod validation schemas with smart type inference.">
+<Layout
+  title="JSON to TypeScript & Zod Schema Generator"
+  description="Generate TypeScript interfaces and Zod validation schemas from any JSON data. Smart type inference, nested object support, and optional field detection. Free online converter."
+  keywords="json to typescript, json to zod, typescript interface generator, zod schema generator, json to ts types, convert json to typescript"
+>
   <JsonToTypes client:load />
+  <section class="seo-content">
+    <h2>JSON to TypeScript + Zod Generator</h2>
+    <p>Paste any JSON and instantly get TypeScript interfaces and Zod validation schemas. Handles nested objects, arrays, nullable fields, and mixed types. Smart inference detects optional fields and union types. Copy the generated code directly into your project.</p>
+    <h3>Output formats</h3>
+    <ul>
+      <li>TypeScript interfaces with proper nesting</li>
+      <li>Zod schemas with runtime validation</li>
+      <li>Support for arrays, nullables, and optional fields</li>
+      <li>Handles deeply nested JSON structures</li>
+    </ul>
+  </section>
 </Layout>

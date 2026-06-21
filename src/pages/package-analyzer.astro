@@ -2,6 +2,22 @@
 import Layout from '../layouts/Layout.astro';
 import PackageAnalyzer from '../tools/PackageAnalyzer';
 ---
-<Layout title="package.json Analyzer" description="Paste any package.json and get a full breakdown of dependencies, scripts, version ranges, and insights.">
+<Layout
+  title="package.json Analyzer — Dependency Insights"
+  description="Analyze your package.json and get insights on dependencies, version ranges, scripts, and project health. Detect wildcard versions, missing fields, and potential issues. Free online tool."
+  keywords="package.json analyzer, npm dependency analyzer, package.json validator, dependency checker, npm package analyzer, node project health"
+>
   <PackageAnalyzer client:load />
+  <section class="seo-content">
+    <h2>Free package.json Analyzer</h2>
+    <p>Paste your package.json and get a complete breakdown of your project's dependencies, scripts, version ranges, and health insights. Identifies wildcard versions, missing metadata fields, git-sourced packages, and provides actionable recommendations.</p>
+    <h3>What you get</h3>
+    <ul>
+      <li>Dependency breakdown by type (prod, dev, peer, optional)</li>
+      <li>Version range analysis (exact, compatible, approximate, wildcard)</li>
+      <li>Script catalog with categorization</li>
+      <li>Project health insights and warnings</li>
+      <li>Links to npm for every package</li>
+    </ul>
+  </section>
 </Layout>

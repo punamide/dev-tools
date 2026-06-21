@@ -2,6 +2,14 @@
 import Layout from '../layouts/Layout.astro';
 import ColorConverter from '../tools/ColorConverter';
 ---
-<Layout title="Color Converter" description="Convert colors between HEX, RGB, and HSL formats in your browser.">
+<Layout
+  title="Color Converter — HEX, RGB, HSL"
+  description="Convert colors between HEX, RGB, and HSL formats instantly. Free online color picker and converter with live preview. Copy color values with one click."
+  keywords="color converter, hex to rgb, rgb to hex, hsl converter, color picker online, hex color converter, css color converter"
+>
   <ColorConverter client:load />
+  <section class="seo-content">
+    <h2>Free Online Color Converter</h2>
+    <p>Convert colors between HEX, RGB, and HSL formats in real time. Input a color in any format and see all equivalent values instantly. Includes a live color preview swatch and one-click copy for CSS development.</p>
+  </section>
 </Layout>

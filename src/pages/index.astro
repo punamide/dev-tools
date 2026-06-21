@@ -2,31 +2,35 @@
 import Layout from '../layouts/Layout.astro';
 
 const tools = [
-  { slug: '/json-formatter', name: 'JSON Formatter', icon: '{}', desc: 'Format, validate and minify JSON data', tag: 'Format' },
-  { slug: '/jwt-decoder', name: 'JWT Decoder', icon: '🔑', desc: 'Decode and inspect JWT token payloads', tag: 'Security' },
-  { slug: '/base64', name: 'Base64', icon: 'B64', desc: 'Encode and decode Base64 strings', tag: 'Encode' },
-  { slug: '/url-encoder', name: 'URL Encode/Decode', icon: '🔗', desc: 'Encode and decode URL components and query strings', tag: 'Encode' },
+  { slug: '/json-formatter', name: 'JSON Formatter', icon: '{}', desc: 'Format, validate and minify JSON data instantly', tag: 'Format' },
+  { slug: '/jwt-decoder', name: 'JWT Decoder', icon: '🔑', desc: 'Decode and inspect JWT token header and payload', tag: 'Security' },
+  { slug: '/base64', name: 'Base64 Encoder/Decoder', icon: 'B64', desc: 'Encode text to Base64 or decode Base64 strings', tag: 'Encode' },
+  { slug: '/url-encoder', name: 'URL Encoder/Decoder', icon: '🔗', desc: 'Encode and decode URL components and query strings', tag: 'Encode' },
   { slug: '/regex-tester', name: 'Regex Tester', icon: '.*', desc: 'Test regular expressions with live match highlighting', tag: 'Test' },
-  { slug: '/timestamp', name: 'Timestamp Converter', icon: '⏱', desc: 'Convert between Unix timestamps and human dates', tag: 'Convert' },
+  { slug: '/regex-builder', name: 'Visual Regex Builder', icon: '⚙', desc: 'Build regex patterns visually with token-based interface', tag: 'Build' },
+  { slug: '/timestamp', name: 'Unix Timestamp Converter', icon: '⏱', desc: 'Convert between Unix epoch timestamps and human dates', tag: 'Convert' },
   { slug: '/color-converter', name: 'Color Converter', icon: '⬤', desc: 'Convert between HEX, RGB, and HSL color formats', tag: 'Convert' },
-  { slug: '/markdown-preview', name: 'Markdown Preview', icon: 'MD', desc: 'Write Markdown and see the rendered output live', tag: 'Preview' },
-  { slug: '/http-status', name: 'HTTP Status Codes', icon: '404', desc: 'Searchable reference for all HTTP status codes', tag: 'Reference' },
+  { slug: '/markdown-preview', name: 'Markdown Preview', icon: 'MD', desc: 'Write Markdown and see rendered HTML output live', tag: 'Preview' },
+  { slug: '/http-status', name: 'HTTP Status Codes', icon: '404', desc: 'Searchable reference for all HTTP response codes', tag: 'Reference' },
   { slug: '/diff-checker', name: 'Diff Checker', icon: '±', desc: 'Compare two text blocks and highlight differences', tag: 'Compare' },
-  { slug: '/uuid-generator', name: 'UUID Generator', icon: '🆔', desc: 'Generate UUID v4 (random), v5 (SHA-1), or bulk batches', tag: 'Generate' },
-  { slug: '/cron-builder', name: 'CRON Builder', icon: '⏰', desc: 'Build cron expressions visually and see next run times', tag: 'Generate' },
-  { slug: '/regex-builder', name: 'Regex Builder', icon: '⚙', desc: 'Build regex patterns visually with live match highlighting', tag: 'Build' },
-  { slug: '/package-analyzer', name: 'package.json Analyzer', icon: '📦', desc: 'Analyze dependencies, scripts, version ranges, and get insights', tag: 'Analyze' },
-  { slug: '/json-to-types', name: 'JSON → TS + Zod', icon: 'TS', desc: 'Generate TypeScript interfaces and Zod schemas from any JSON', tag: 'Generate' },
-  { slug: '/base-converter', name: 'Number Base Converter', icon: '01', desc: 'Convert between binary, octal, decimal, and hex in real time', tag: 'Convert' },
+  { slug: '/uuid-generator', name: 'UUID Generator', icon: '🆔', desc: 'Generate UUID v4, v5, or bulk UUIDs instantly', tag: 'Generate' },
+  { slug: '/cron-builder', name: 'Cron Expression Builder', icon: '⏰', desc: 'Build cron schedules visually with next-run preview', tag: 'Generate' },
+  { slug: '/package-analyzer', name: 'package.json Analyzer', icon: '📦', desc: 'Analyze dependencies, scripts, versions, and project health', tag: 'Analyze' },
+  { slug: '/json-to-types', name: 'JSON to TypeScript + Zod', icon: 'TS', desc: 'Generate TypeScript interfaces and Zod schemas from JSON', tag: 'Generate' },
+  { slug: '/base-converter', name: 'Number Base Converter', icon: '01', desc: 'Convert between binary, octal, decimal, and hex', tag: 'Convert' },
 ];
 ---
 
-<Layout title="Home" description="16 free developer tools that run entirely in your browser. JSON formatter, regex builder, JWT decoder, cron builder, and more. No signup, no tracking, no server.">
+<Layout
+  title="Home"
+  description="16 free online developer tools — JSON formatter, regex tester, UUID generator, JWT decoder, diff checker, cron builder, and more. Runs in your browser. No signup. No tracking."
+  keywords="developer tools, online dev tools, json formatter, regex tester, uuid generator, jwt decoder, base64 encoder, cron builder, free coding tools"
+>
   <div>
     <div style="margin-bottom:32px;">
-      <h2 style="font-size:24px;font-weight:700;color:#f1f5f9;margin:0 0 8px;">Developer Tools</h2>
+      <h2 style="font-size:24px;font-weight:700;color:#f1f5f9;margin:0 0 8px;">Free Online Developer Tools</h2>
       <p style="color:#64748b;font-size:14px;margin:0;line-height:1.6;">
-        16 essential tools for your daily workflow. Everything runs in your browser — no data ever leaves your machine.
+        16 essential tools for your daily workflow. Everything runs in your browser — no data ever leaves your machine. No signup, no tracking, no server.
       </p>
     </div>
 
@@ -47,5 +51,23 @@ const tools = [
         </a>
       ))}
     </div>
+
+    <section class="seo-content">
+      <h2>Developer Tools That Respect Your Privacy</h2>
+      <p>Every tool on this site runs entirely in your web browser using JavaScript. No data is transmitted to any server. No accounts, no cookies, no analytics tracking. Built for developers who value speed and privacy.</p>
+      <h3>Popular Tools</h3>
+      <ul>
+        <li><a href="/json-formatter">JSON Formatter</a> — Format, validate, and minify JSON</li>
+        <li><a href="/regex-tester">Regex Tester</a> — Test regular expressions with live highlighting</li>
+        <li><a href="/uuid-generator">UUID Generator</a> — Generate v4, v5, and bulk UUIDs</li>
+        <li><a href="/jwt-decoder">JWT Decoder</a> — Decode and inspect JSON Web Tokens</li>
+        <li><a href="/cron-builder">Cron Builder</a> — Build cron expressions visually</li>
+        <li><a href="/diff-checker">Diff Checker</a> — Compare two text blocks</li>
+        <li><a href="/json-to-types">JSON to TypeScript</a> — Generate TS interfaces from JSON</li>
+        <li><a href="/regex-builder">Regex Builder</a> — Build regex patterns visually</li>
+      </ul>
+      <h3>Built by PunamIDE</h3>
+      <p>These tools are part of the <a href="https://punamide.com">PunamIDE</a> developer ecosystem. PunamIDE is an AI-powered desktop IDE for Windows with built-in code intelligence, native snapshots, and technical debt analysis.</p>
+    </section>
   </div>
 </Layout>

@@ -2,6 +2,14 @@
 import Layout from '../layouts/Layout.astro';
 import MarkdownPreview from '../tools/MarkdownPreview';
 ---
-<Layout title="Markdown Preview" description="Write Markdown and see rendered HTML output live in your browser.">
+<Layout
+  title="Markdown Preview — Live Editor Online"
+  description="Write Markdown and see rendered HTML output in real time. Free online Markdown editor with side-by-side preview. Supports GitHub Flavored Markdown syntax."
+  keywords="markdown preview, markdown editor online, markdown to html, live markdown preview, github markdown preview, markdown renderer"
+>
   <MarkdownPreview client:load />
+  <section class="seo-content">
+    <h2>Free Online Markdown Preview Editor</h2>
+    <p>Write Markdown in the editor and see rendered output instantly. Supports headings, lists, code blocks, tables, links, images, and all standard Markdown syntax. Perfect for writing README files, documentation, and blog posts.</p>
+  </section>
 </Layout>

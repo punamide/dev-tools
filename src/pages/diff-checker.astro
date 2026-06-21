@@ -2,6 +2,14 @@
 import Layout from '../layouts/Layout.astro';
 import DiffChecker from '../tools/DiffChecker';
 ---
-<Layout title="Diff Checker" description="Compare two text blocks and see the differences highlighted in your browser.">
+<Layout
+  title="Diff Checker — Compare Text Online"
+  description="Compare two text blocks and instantly see differences highlighted. Free online diff tool with line-by-line and inline comparison. Great for comparing code, configs, and documents."
+  keywords="diff checker, compare text online, text diff, code diff tool, online diff, compare two texts, text comparison"
+>
   <DiffChecker client:load />
+  <section class="seo-content">
+    <h2>Free Online Text Diff Checker</h2>
+    <p>Paste two blocks of text and instantly see what changed. Additions and removals are highlighted clearly. Useful for comparing code versions, configuration files, API responses, and documentation drafts.</p>
+  </section>
 </Layout>

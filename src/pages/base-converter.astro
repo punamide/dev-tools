@@ -2,6 +2,14 @@
 import Layout from '../layouts/Layout.astro';
 import BaseConverter from '../tools/BaseConverter';
 ---
-<Layout title="Number Base Converter" description="Convert numbers between binary, octal, decimal, and hexadecimal in real time. Includes bit visualizer, bitwise operations, and ASCII reference.">
+<Layout
+  title="Number Base Converter — Binary, Octal, Decimal, Hex"
+  description="Convert numbers between binary, octal, decimal, and hexadecimal in real time. Free online base converter with bit visualizer and bitwise operations."
+  keywords="binary to decimal, hex to decimal, number base converter, binary converter, octal converter, hexadecimal converter, base conversion"
+>
   <BaseConverter client:load />
+  <section class="seo-content">
+    <h2>Free Online Number Base Converter</h2>
+    <p>Convert numbers between binary (base 2), octal (base 8), decimal (base 10), and hexadecimal (base 16) in real time. Type in any field and see all other bases update instantly. Includes bit visualization and common programming reference values.</p>
+  </section>
 </Layout>

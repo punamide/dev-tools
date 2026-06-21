@@ -2,6 +2,14 @@
 import Layout from '../layouts/Layout.astro';
 import HttpStatus from '../tools/HttpStatus';
 ---
-<Layout title="HTTP Status Codes" description="Searchable reference for all HTTP status codes and their meanings.">
+<Layout
+  title="HTTP Status Codes — Complete Reference"
+  description="Complete searchable reference for all HTTP status codes (1xx–5xx) with descriptions, use cases, and explanations. Free HTTP status code lookup for developers."
+  keywords="http status codes, http response codes, 404 status code, 200 ok, 500 internal server error, http codes list, rest api status codes"
+>
   <HttpStatus client:load />
+  <section class="seo-content">
+    <h2>Complete HTTP Status Code Reference</h2>
+    <p>Searchable reference for all standard HTTP status codes. Find the meaning, typical use case, and debugging tips for any response code from 100 to 599. Essential for API development, debugging network issues, and understanding server responses.</p>
+  </section>
 </Layout>

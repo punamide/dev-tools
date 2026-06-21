@@ -2,6 +2,22 @@
 import Layout from '../layouts/Layout.astro';
 import RegexBuilder from '../tools/RegexBuilder';
 ---
-<Layout title="Visual Regex Builder" description="Build regular expressions visually by adding and configuring tokens. Live match highlighting and pattern breakdown included.">
+<Layout
+  title="Visual Regex Builder — Build Regular Expressions Visually"
+  description="Build regular expressions visually by adding tokens, quantifiers, and groups. See the generated pattern, live match results, and plain-English explanations. Free online regex builder."
+  keywords="regex builder, visual regex builder, regex generator, build regex visually, regular expression builder, regex creator online"
+>
   <RegexBuilder client:load />
+  <section class="seo-content">
+    <h2>Visual Regular Expression Builder</h2>
+    <p>Construct complex regular expressions without memorizing syntax. Add tokens visually — digits, word characters, groups, lookaheads, quantifiers — and see the generated pattern update in real time with match highlighting and plain-English explanations for each part.</p>
+    <h3>Features</h3>
+    <ul>
+      <li>Drag-and-drop style token building</li>
+      <li>Quick patterns for common use cases (email, URL, IP, date)</li>
+      <li>Live match highlighting on test input</li>
+      <li>Pattern breakdown with human-readable explanations</li>
+      <li>Support for groups, lookaheads, quantifiers, and lazy matching</li>
+    </ul>
+  </section>
 </Layout>

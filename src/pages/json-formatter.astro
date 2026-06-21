@@ -2,6 +2,22 @@
 import Layout from '../layouts/Layout.astro';
 import JsonFormatter from '../tools/JsonFormatter';
 ---
-<Layout title="JSON Formatter" description="Format, validate and minify JSON data in your browser.">
+<Layout
+  title="JSON Formatter & Validator Online"
+  description="Format, validate, and minify JSON data instantly in your browser. Free online JSON beautifier with syntax error detection. No signup required."
+  keywords="json formatter, json validator, json beautifier, format json online, json minifier, pretty print json"
+>
   <JsonFormatter client:load />
+  <section class="seo-content">
+    <h2>Free Online JSON Formatter</h2>
+    <p>Paste your JSON data and instantly format it with proper indentation, or minify it for production use. This tool validates your JSON syntax and highlights errors in real time. Works entirely in your browser — no data is sent to any server.</p>
+    <h3>Features</h3>
+    <ul>
+      <li>Format JSON with 2 or 4 space indentation</li>
+      <li>Minify JSON for smaller file sizes</li>
+      <li>Instant syntax error detection with error messages</li>
+      <li>Copy formatted output with one click</li>
+      <li>100% client-side — your data never leaves your browser</li>
+    </ul>
+  </section>
 </Layout>

@@ -2,6 +2,14 @@
 import Layout from '../layouts/Layout.astro';
 import UrlEncoder from '../tools/UrlEncoder';
 ---
-<Layout title="URL Encode / Decode" description="Encode and decode URL components and query strings in your browser.">
+<Layout
+  title="URL Encoder & Decoder Online"
+  description="Encode and decode URL components and query strings instantly. Free online URL encoding tool for special characters, spaces, and Unicode. No signup required."
+  keywords="url encoder, url decoder, encode url online, url encode decode, percent encoding, urlencode online"
+>
   <UrlEncoder client:load />
+  <section class="seo-content">
+    <h2>Free Online URL Encoder & Decoder</h2>
+    <p>Encode special characters in URLs or decode percent-encoded strings. Essential for working with query parameters, API URLs, and form data. Handles Unicode characters and all reserved URL characters.</p>
+  </section>
 </Layout>

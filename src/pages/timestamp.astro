@@ -2,6 +2,14 @@
 import Layout from '../layouts/Layout.astro';
 import TimestampConverter from '../tools/TimestampConverter';
 ---
-<Layout title="Timestamp Converter" description="Convert between Unix timestamps and human-readable dates in your browser.">
+<Layout
+  title="Unix Timestamp Converter — Epoch to Date"
+  description="Convert between Unix timestamps and human-readable dates instantly. Free online epoch converter with current timestamp display and timezone support."
+  keywords="unix timestamp converter, epoch converter, timestamp to date, date to timestamp, unix time converter, epoch to date"
+>
   <TimestampConverter client:load />
+  <section class="seo-content">
+    <h2>Free Online Unix Timestamp Converter</h2>
+    <p>Convert Unix epoch timestamps to human-readable dates and vice versa. See the current Unix timestamp, convert specific dates to epoch time, and work with both seconds and milliseconds. Essential for debugging APIs, logs, and database records.</p>
+  </section>
 </Layout>

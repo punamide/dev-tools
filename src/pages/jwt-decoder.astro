@@ -2,6 +2,21 @@
 import Layout from '../layouts/Layout.astro';
 import JwtDecoder from '../tools/JwtDecoder';
 ---
-<Layout title="JWT Decoder" description="Decode and inspect JWT token header and payload in your browser.">
+<Layout
+  title="JWT Decoder & Inspector Online"
+  description="Decode and inspect JWT tokens instantly. View header, payload, claims, and expiration without any server-side processing. Free online JWT debugger."
+  keywords="jwt decoder, jwt debugger, decode jwt token, jwt inspector, json web token decoder, jwt parser online"
+>
   <JwtDecoder client:load />
+  <section class="seo-content">
+    <h2>Free Online JWT Decoder</h2>
+    <p>Paste any JSON Web Token to instantly decode and inspect its header and payload. See all claims, check expiration times, and debug authentication issues. No server-side processing — your tokens stay private.</p>
+    <h3>What you can inspect</h3>
+    <ul>
+      <li>Token header (algorithm, type)</li>
+      <li>Payload claims (sub, iss, exp, iat, custom claims)</li>
+      <li>Expiration status and time remaining</li>
+      <li>Token structure validation</li>
+    </ul>
+  </section>
 </Layout>

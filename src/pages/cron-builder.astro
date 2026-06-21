@@ -2,6 +2,23 @@
 import Layout from '../layouts/Layout.astro';
 import CronBuilder from '../tools/CronBuilder';
 ---
-<Layout title="CRON Expression Builder" description="Visually build cron expressions, get human-readable descriptions, and see the next 5 scheduled run times.">
+<Layout
+  title="Cron Expression Builder & Tester"
+  description="Build cron expressions visually and see the next 5 scheduled run times. Human-readable descriptions, common presets, and full cron syntax reference. Free online cron generator."
+  keywords="cron expression builder, cron generator, crontab generator, cron schedule builder, cron tester online, cron expression generator, crontab guru"
+>
   <CronBuilder client:load />
+  <section class="seo-content">
+    <h2>Free Online Cron Expression Builder</h2>
+    <p>Build cron schedules visually without memorizing cron syntax. Select minutes, hours, days, months, and weekdays through an interactive interface. See a human-readable description and the next 5 scheduled run times calculated in real time.</p>
+    <h3>Features</h3>
+    <ul>
+      <li>Visual builder for each cron field (minute, hour, day, month, weekday)</li>
+      <li>Common presets (hourly, daily, weekly, monthly)</li>
+      <li>Next 5 run times calculated instantly</li>
+      <li>Human-readable schedule description</li>
+      <li>Raw expression editing with two-way sync</li>
+      <li>Full cron format reference included</li>
+    </ul>
+  </section>
 </Layout>

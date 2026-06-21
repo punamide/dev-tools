@@ -6,6 +6,12 @@ import JwtDecoder from '../tools/JwtDecoder';
   title="JWT Decoder & Inspector Online"
   description="Decode and inspect JWT tokens instantly. View header, payload, claims, and expiration without any server-side processing. Free online JWT debugger."
   keywords="jwt decoder, jwt debugger, decode jwt token, jwt inspector, json web token decoder, jwt parser online"
+  faq={[
+    { question: "What is a JWT token?", answer: "A JSON Web Token (JWT) is a compact, URL-safe way to represent claims between two parties. It consists of three Base64-encoded parts: header, payload, and signature, separated by dots." },
+    { question: "Is it safe to paste my JWT here?", answer: "Yes. This tool runs entirely in your browser. No tokens are transmitted to any server. However, you should never share production tokens publicly." },
+    { question: "Can this tool verify JWT signatures?", answer: "This tool decodes and displays the header and payload. Signature verification requires the signing key, which is not handled client-side for security reasons." },
+    { question: "How do I check if a JWT is expired?", answer: "After decoding, look for the 'exp' (expiration) claim in the payload. This tool shows whether the token has expired based on the current time." }
+  ]}
 >
   <JwtDecoder client:load />
   <section class="seo-content">

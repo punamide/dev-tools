@@ -6,6 +6,11 @@ import RegexTester from '../tools/RegexTester';
   title="Regex Tester Online — Test Regular Expressions"
   description="Test regular expressions with live match highlighting. See matches, groups, and captures in real time. Free online regex tester with JavaScript flavor support."
   keywords="regex tester, regex tester online, test regular expression, regex matcher, regex debugger, regexp tester, regular expression tester"
+  faq={[
+    { question: "What regex flavor does this tool use?", answer: "This tool uses JavaScript's built-in RegExp engine. It supports all modern features including named groups, lookaheads, lookbehinds, and Unicode properties." },
+    { question: "Is my data safe when testing regex?", answer: "Yes. All processing happens in your browser. No text or patterns are sent to any server." },
+    { question: "Can I test regex with global and multiline flags?", answer: "Yes. You can toggle the g (global), i (case-insensitive), m (multiline), and s (dotAll) flags from the interface." }
+  ]}
 >
   <RegexTester client:load />
   <section class="seo-content">

@@ -6,6 +6,12 @@ import UuidGenerator from '../tools/UuidGenerator';
   title="UUID Generator Online — v4, v5, Bulk"
   description="Generate UUID v4 (random), UUID v5 (SHA-1 based), or bulk UUIDs instantly. Free online UUID/GUID generator with copy-to-clipboard and batch generation."
   keywords="uuid generator, uuid generator online, generate uuid, guid generator, uuid v4, uuid v5, bulk uuid generator"
+  faq={[
+    { question: "What is a UUID?", answer: "A UUID (Universally Unique Identifier) is a 128-bit label used to uniquely identify information in computer systems. The most common format is UUID v4, which is randomly generated and has a near-zero chance of collision." },
+    { question: "What is the difference between UUID v4 and v5?", answer: "UUID v4 is randomly generated using cryptographically secure random numbers. UUID v5 is deterministic — it uses a SHA-1 hash of a namespace and input string, so the same inputs always produce the same UUID." },
+    { question: "Are UUIDs generated here truly random?", answer: "Yes. This tool uses the browser's crypto.randomUUID() API, which provides cryptographically secure random values." },
+    { question: "Can I generate multiple UUIDs at once?", answer: "Yes. The bulk generation feature lets you generate up to 100 UUIDs at once with one click." }
+  ]}
 >
   <UuidGenerator client:load />
   <section class="seo-content">

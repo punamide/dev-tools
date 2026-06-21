@@ -6,6 +6,12 @@ import JsonFormatter from '../tools/JsonFormatter';
   title="JSON Formatter & Validator Online"
   description="Format, validate, and minify JSON data instantly in your browser. Free online JSON beautifier with syntax error detection. No signup required."
   keywords="json formatter, json validator, json beautifier, format json online, json minifier, pretty print json"
+  faq={[
+    { question: "What is JSON formatting?", answer: "JSON formatting (or beautifying) adds proper indentation and line breaks to compressed JSON data, making it human-readable. It does not change the data — only the visual presentation." },
+    { question: "Is this JSON formatter free?", answer: "Yes, completely free with no limits. It runs entirely in your browser — no data is sent to any server, no signup required." },
+    { question: "Does formatting change my JSON data?", answer: "No. Formatting only affects whitespace and indentation. The parsed values, keys, and structure remain identical." },
+    { question: "Can this tool validate JSON?", answer: "Yes. If your JSON has syntax errors (missing commas, unquoted keys, trailing commas), the tool will detect and display the specific error message." }
+  ]}
 >
   <JsonFormatter client:load />
   <section class="seo-content">

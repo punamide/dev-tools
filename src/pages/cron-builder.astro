@@ -6,6 +6,12 @@ import CronBuilder from '../tools/CronBuilder';
   title="Cron Expression Builder & Tester"
   description="Build cron expressions visually and see the next 5 scheduled run times. Human-readable descriptions, common presets, and full cron syntax reference. Free online cron generator."
   keywords="cron expression builder, cron generator, crontab generator, cron schedule builder, cron tester online, cron expression generator, crontab guru"
+  faq={[
+    { question: "What is a cron expression?", answer: "A cron expression is a string of five fields (minute, hour, day of month, month, day of week) that defines a recurring schedule. It's used in Linux/Unix systems, cloud services, and CI/CD pipelines to automate tasks." },
+    { question: "What does */5 mean in cron?", answer: "The */5 syntax means 'every 5 units.' For example, */5 in the minute field means every 5 minutes (0, 5, 10, 15, 20...)." },
+    { question: "How do I schedule a cron job for every weekday at 9am?", answer: "Use the expression: 0 9 * * 1-5. This means at minute 0, hour 9, any day of month, any month, Monday through Friday." },
+    { question: "Is this a 5-field or 6-field cron builder?", answer: "This is a standard 5-field cron builder (minute, hour, day of month, month, day of week). It does not include a seconds field." }
+  ]}
 >
   <CronBuilder client:load />
   <section class="seo-content">

@@ -6,6 +6,11 @@ import Base64Tool from '../tools/Base64Tool';
   title="Base64 Encode & Decode Online"
   description="Encode text to Base64 or decode Base64 strings instantly in your browser. Free online Base64 converter with UTF-8 support. No signup needed."
   keywords="base64 encode, base64 decode, base64 converter online, encode to base64, decode base64, base64 encoder decoder"
+  faq={[
+    { question: "What is Base64 encoding?", answer: "Base64 is a binary-to-text encoding scheme that converts binary data into ASCII characters. It's commonly used to encode images in HTML, transmit data in URLs, and store binary data in JSON or XML." },
+    { question: "Is Base64 encoding encryption?", answer: "No. Base64 is an encoding, not encryption. Anyone can decode Base64 without a key. Never use Base64 to protect sensitive data." },
+    { question: "Why does Base64 make data larger?", answer: "Base64 encoding increases data size by approximately 33% because it represents 3 bytes of binary data as 4 ASCII characters." }
+  ]}
 >
   <Base64Tool client:load />
   <section class="seo-content">
